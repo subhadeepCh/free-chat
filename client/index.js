@@ -1,4 +1,4 @@
-const socket = io("https://chatisfreeserver.herokuapp.com/");
+const socket = io("https://guarded-reaches-08801.herokuapp.com/");
 var chats = document.getElementById("chats");
 var auth = {
   "Saved Messages": "You",

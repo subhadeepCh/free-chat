@@ -13,7 +13,6 @@ let rooms = [];
 app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
-app.set("views", "./server/views");
 
 app.get("/", (req, res) => {
   res.render("startup");
