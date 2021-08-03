@@ -1,4 +1,4 @@
-const socket = io("http://127.0.0.1:3000/");
+const socket = io("https://chatisfreeserver.herokuapp.com/");
 var chats = document.getElementById("chats");
 var auth = {
   "Saved Messages": "You",
