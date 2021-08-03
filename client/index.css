@@ -1,0 +1,306 @@
+html{
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+}
+body{
+    height: 100%;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.container{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    position: absolute;
+}
+.navbar{
+    background-color: #075E54;
+    color: white;
+}
+
+
+.nav-icons{
+    padding:0 0.5rem 0 0.5rem;
+    cursor: pointer;
+}
+
+.modal-body>input{
+    margin-bottom: 0.5rem;
+}
+
+.sub-nav{
+    background-color: #075E54;
+    color: #128C7E;
+    padding: 0 0.5rem 0 0.5rem;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+   
+}
+
+.user-action{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.camera{
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+.chats{
+    padding: 0 2rem 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.status{
+    padding: 0 2rem 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.calls{
+    padding: 0 2rem 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.active{
+    color:white;
+    border-width: 100%;
+    border-bottom: 0.1rem solid white;
+}
+
+.camera-page{
+    height: 85%;
+    position: relative;
+    top: 6rem;
+}
+
+.chat-page{
+   height: 85%;
+   position: relative;
+   top: 6rem;
+}
+
+.person{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    cursor: pointer;
+    padding:0.1rem;
+}
+.person:hover{
+    background-color: rgb(238, 235, 235);
+    padding:0.1rem;
+    border-radius: 2rem;
+}
+
+.profile{
+    width:100%;
+    height: 3rem;
+    margin: 0 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.room{
+    font-size: 1rem;
+    color: black
+}
+
+.date{
+    font-size: 0.8rem;
+    color: rgb(192, 192, 192);
+}
+
+.profile-pic>img{
+    width:3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.status-page{
+    height: 85%;
+    position: relative;
+    top: 6rem;
+}
+
+.call-page{
+    height: 85%;
+    position: relative;
+    top: 6rem;
+}
+
+.new-action{
+    background-color: #25D366;
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    cursor: pointer;
+    padding:0.5rem;
+    color:white;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-basis: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.invisible{
+    display: none;
+}
+
+#return{
+    cursor: pointer;
+}
+
+#openRoom{
+    background-image: url('whatsapp.png');
+}
+
+.chat-body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 3rem;
+    max-height: 83vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.chat-input{
+    width:100%;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0.5rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.whatsapp-input{
+    width:95%;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    margin-left: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+#emoji{
+    color:rgb(197, 197, 197);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#attach{
+    display: none;
+}
+
+.sendMsg{
+    background-color: #075E54;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    height: 2.5rem;
+    width:2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.25rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    cursor: pointer;
+}
+
+.whatsapp-input>input{
+    border:none;
+    outline:none;
+    width:100%;
+}
+.whatsapp-input>input:focus{
+    border:none;
+    outline:none;
+}
+
+.attachIcon{
+    font-size: 1.2rem;
+    color:rgb(197, 197, 197);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.attachIcon:hover{
+    background-color:rgb(197, 197, 197);
+    color:white;
+    padding: 0.2rem;
+    border-radius: 0.8rem;
+}
+
+.notif-container{
+    min-width:20%;
+    background-color: rgb(137, 197, 216);
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    height: 1rem;
+    flex-basis: auto;
+    padding: 0 1rem 0 1rem;
+    margin: 0.3rem;
+}
+
+.external-message-container{
+    background-color: white;
+    margin:0.5rem 0 0.5rem 0.3rem;
+    padding: 0.4rem;
+    width: 40%;
+    border-radius: 0.8rem;
+}
+.message-container{
+    align-self: flex-end;
+    background-color: rgb(141, 230, 153);
+    margin:0.5rem 0.7rem 0.5rem 0.3rem;
+    padding: 0.4rem;
+    width: 40%;
+    border-radius: 0.8rem;
+}
+
+.image-container{
+    align-self: flex-end;
+    background-color: rgb(141, 230, 153);
+    margin:2rem 0.7rem 1rem 0.3rem;
+    padding: 0.4rem;
+    width: 40%;
+    border-radius: 0.8rem;
+}
+.image-container>img{
+    width: 100%;
+}
+
+.external-image-container{
+    background-color: white;
+    margin:2rem 0 1rem 0.3rem;
+    padding: 0.4rem;
+    width: 40%;
+    border-radius: 0.8rem;
+}
+
+.external-image-container>img{
+    width: 100%;
+   
+}

@@ -1,0 +1,12 @@
+#outer{
+    background-color: #d4d3d1d2;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 2rem;
+    padding: 1rem;
+}
