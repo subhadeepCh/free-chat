@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Chat App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="container" id="closeRoom">
+      <div class="header">
+        <!--navbar-->
+        <nav class="navbar">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">FreeChat</span>
+            <span>
+              <span class="nav-icons"><i class="fas fa-search"></i></span>
+              <span class="nav-icons"><i class="fas fa-ellipsis-v"></i></span>
+            </span>
+          </div>
+        </nav>
+        <!--sub Nav-->
+        <div class="sub-nav">
+          <div class="camera"><i class="fas fa-camera"></i></div>
+          <div class="user-action">
+            <div class="chats active">CHATS</div>
+            <div class="status">STATUS</div>
+            <div class="calls">CALLS</div>
+          </div>
+        </div>
+      </div>
+      <!--Camera Page-->
+      <div class="camera-page invisible">vsvsv</div>
+      <!--Chat Page-->
+      <div class="chat-page">
+      </div>
+      <!--Status Page-->
+      <div class="status-page invisible">svsdv</div>
+      <!--Call Page-->
+      <div class="call-page invisible">vsdv</div>
+      <!--New Action-->
+      <div
+        class="new-action"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        <i class="fas fa-comment-dots"></i>
+      </div>
+    </div>
+    <!--Opened Room-->
+    <div class="container invisible" id="openRoom">
+      <div class="header">
+        <!--navbar-->
+        <nav class="navbar">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+              <span id="return"><i class="fas fa-arrow-left"></i></span>
+              <span id="RoomName">Saved Messages</span>
+            </span>
+            <span> </span>
+          </div>
+        </nav>
+      </div>
+      <!--chat-body-->
+      <div class="chat-body" id="scroll">
+      </div>
+      <!--chat inputs-->
+      <div class="chat-input">
+        <div class="whatsapp-input">
+          <span id="emoji"><i class="fas fa-grin-beam"></i></span>
+          <input type="text" placeholder="Type a message" id="msg"/>
+          <span>
+            <label for="attach">
+              <span class="attachIcon"><i class="fas fa-paperclip"></i></span>
+            </label>
+            <input id="attach" type="file"/></span>
+        </div>
+        <div class="sendMsg">
+          <i class="fas fa-paper-plane"></i>
+        </div>
+      </div>
+    </div>
+    <!--Join Modal-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Join/Create Room</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              class="form-control"
+              id="Name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="Room"
+              placeholder="Room ID"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              id="JoinRoom"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Join
+            </button>
+            <button
+              id="CreateRoom"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Create Room
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+      integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script async defer src="index.js"></script>
+  </body>
+</html>
